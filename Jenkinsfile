@@ -1,6 +1,4 @@
-try {
 node {
-    def app
 
     stage('Clone Repository')
     {
@@ -12,8 +10,10 @@ node {
         sh "ls -l"	
        
     }
-
-
+    stage('Apply changes to the environment') {
+        
+        sh"ls -l"
+        sh "php -s local host:5000"
 
 }
 } catch(Error|Exception e) {
